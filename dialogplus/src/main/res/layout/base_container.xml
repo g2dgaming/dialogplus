@@ -4,7 +4,7 @@
     android:id="@+id/dialogplus_outmost_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_dialog"
+    android:background="@color/dialogplus_black_overlay"
     android:clickable="true">
 
   <FrameLayout
