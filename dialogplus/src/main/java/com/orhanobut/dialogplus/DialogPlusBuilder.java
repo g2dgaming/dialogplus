@@ -4,17 +4,21 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.Display;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import java.util.Arrays;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import org.w3c.dom.Text;
 
 public class DialogPlusBuilder {
   private static final int INVALID = -1;
@@ -122,6 +126,12 @@ public class DialogPlusBuilder {
     this.fixedHeader = fixed;
     return this;
   }
+  public DialogPlusBuilder setHeader(String headerText) {
+    View view= LayoutInflater.from(context).inflate(R.layout.headertext,null,false);
+    ((TextView)view.findViewById(R.id.headerText)).setText(headerText);
+    return setHeader(view,false);
+  }
+
 
   /**
    * Set the header view using a view
